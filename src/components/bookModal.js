@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 import "../styles/BookingModal.css"; // Add custom CSS for styling
 
 
@@ -10,7 +10,6 @@ const Modal = ({ isOpen, onClose, onSubmit }) => {
             <div className="modal-content">
                 <span className="close" onClick={onClose}>&times;</span>
                 <h2>Book a Cleaning Service</h2>
-                {/* Booking form goes here */}
                 <form onSubmit={onSubmit}>
                     <label>Name:</label>
                     <input type="text" name="name" required />

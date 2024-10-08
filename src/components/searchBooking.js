@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../styles/searchbooking.css";
 
 const SearchBooking = () => {
   const [phone, setPhone] = useState("");
@@ -7,31 +8,43 @@ const SearchBooking = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
+
     try {
       const response = await fetch(
-        `http://localhost:8000/api/bookings/search?phone=${phone}`
+        `http://127.0.0.1:8000/api/bookings/search?phone=${phone}`
       );
+
+      if (!response.ok) {
+        const data = await response.json();
+        setBooking(null);
+        setError(data.message || "Error fetching booking");
+        return;
+      }
+
       const data = await response.json();
 
-      if (response.ok) {
+      if (data && Object.keys(data).length > 0) {
         setBooking(data);
         setError("");
       } else {
         setBooking(null);
-        setError(data.message);
+        setError("No booking found for the provided phone number.");
       }
-    } catch (error) {
-      console.error("Error:", error);
+    } catch (err) {
+      console.error("Error:", err);
+      setError("An error occurred while searching for booking.");
     }
   };
 
   return (
-    <div>
-      <h2>Search Your Booking</h2>
-      <form onSubmit={handleSearch}>
-        <label>Enter Phone Number:</label>
+    <div className="search-booking-container">
+      <h2 className="search-booking-header">Search Your Booking</h2>
+
+      <form className="search-form" onSubmit={handleSearch}>
+        <label htmlFor="phone">Enter Phone Number:</label>
         <input
           type="text"
+          id="phone"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
           required
@@ -40,15 +53,17 @@ const SearchBooking = () => {
       </form>
 
       {booking && (
-        <div>
+        <div className="booking-results">
           <h3>Booking Details</h3>
-          <p>Name: {booking.name}</p>
-          <p>Service: {booking.service}</p>
-          <p>Date: {booking.date}</p>
+          <div className="booking-item">
+            <p><strong>Name:</strong> {booking.name}</p>
+            <p><strong>Service:</strong> {booking.service}</p>
+            <p><strong>Date:</strong> {booking.date}</p>
+          </div>
         </div>
       )}
 
-      {error && <p>{error}</p>}
+      {error && <p className="no-results">{error}</p>}
     </div>
   );
 };

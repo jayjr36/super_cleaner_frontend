@@ -1,0 +1,110 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 50px;
+    padding: 0;
+}
+
+/* Container for the Search Booking Page */
+.search-booking-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Style */
+.search-booking-header {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #4caf50;
+}
+
+/* Form Styling */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-form label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.search-form input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Button Styling */
+.search-form button {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-form button:hover {
+    background-color: #034505;
+}
+
+/* Results Section */
+.booking-results {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+}
+
+.booking-results h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.booking-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.booking-item:last-child {
+    border-bottom: none;
+}
+
+.booking-item p {
+    margin: 5px 0;
+}
+
+/* No results message */
+.no-results {
+    color: #999;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+    .search-booking-container {
+        padding: 10px;
+    }
+
+    .search-form input, .search-form button {
+        width: 100%;
+        max-width: 100%;
+    }
+}

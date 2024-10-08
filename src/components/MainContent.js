@@ -3,6 +3,10 @@ import "../styles/MainContent.css";
 import HomePage from "../pages/homepage";
 import ServicesPage from "../pages/services";
 import AboutPage from "../pages/about";
+import SearchBooking from "./searchBooking";
+import ManageBookings from "../pages/bookings";
+import RegistrationPage from "../pages/registration";
+import ApplicationDashboard from "../pages/applications";
 
 const MainContent = ({ page }) => {
   const renderContent = () => {
@@ -13,6 +17,14 @@ const MainContent = ({ page }) => {
         return <AboutPage />;
       case "services":
         return <ServicesPage />;
+      case "searchbooking":
+        return <SearchBooking/>;
+      case "bookings":
+        return <ManageBookings/>;
+      case "register":
+        return <RegistrationPage/>;
+      case "approval":
+        return <ApplicationDashboard/>;
       case "contact":
         return <p>Contact us here.</p>;
       default:

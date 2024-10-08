@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/TopBar.css";
+import "../styles/TopBar.css"
 
 const TopBar = ({ onSelectPage }) => {
   return (
@@ -9,6 +9,9 @@ const TopBar = ({ onSelectPage }) => {
       </div>
       <div className="topbar-right">
         <ul className="nav-links">
+          <li>
+            <a onClick = {() => onSelectPage("searchbooking") } href="#a"> Search Booking</a>
+            </li>
           <li>
             <a onClick={() => onSelectPage("home")} href="#a">
               Home
@@ -25,8 +28,23 @@ const TopBar = ({ onSelectPage }) => {
             </a>
           </li>
           <li>
+            <a onClick={() => onSelectPage("bookings")} href="#bookings">
+              Bookings
+            </a>
+          </li>
+          <li>
             <a onClick={() => onSelectPage("contact")} href="#contact">
               Contact
+            </a>
+          </li>
+          <li>
+            <a onClick={() => onSelectPage("register")} href="#register">
+              Registration
+            </a>
+          </li>
+          <li>
+            <a onClick={() => onSelectPage("approval")} href="#approval">
+             Approval
             </a>
           </li>
         </ul>

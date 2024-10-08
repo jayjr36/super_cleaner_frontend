@@ -1,4 +1,5 @@
 .homepage {
+  margin-top: 50px;
   font-family: Arial, sans-serif;
   text-align: center;
   padding: 20px;
@@ -56,4 +57,23 @@
 
 .footer-section p {
   margin: 5px 0;
+}
+.why-choose-us {
+  margin-top: 50px;
+}
+
+.why-choose-us h2 {
+  font-size: 2em;
+  color: #333;
+}
+
+.why-choose-us ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.why-choose-us li {
+  font-size: 1.2em;
+  color: #666;
+  margin: 10px 0;
 }
